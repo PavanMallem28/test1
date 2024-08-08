@@ -1,0 +1,44 @@
+# Enable proxy
+enableproxy() {
+    export HTTP_PROXY=http://127.0.0.1:3128
+    export HTTPS_PROXY=http://127.0.0.1:3128
+    export http_proxy=$HTTP_PROXY
+    export https_proxy=$HTTPS_PROXY
+    git config --global http.proxy http://127.0.0.1:3128
+    git config --global https.proxy http://127.0.0.1:3128
+}
+
+# Enable proxy usage
+enableproxy
+
+# Navigate to mounted folder
+cd /mnt
+
+# Create folder called tools
+mkdir -p tools
+
+# Create a folder called network under tools and navigate to the network folder
+mkdir -p tools/network
+cd tools/network
+
+# Network Tools
+git clone https://github.com/nabla-c0d3/sslyze.git
+git clone https://github.com/rbsec/sslscan.git
+git clone https://github.com/fortra/impacket.git
+git clone https://github.com/SpiderLabs/Responder.git
+
+# Create a folder called cloud under tools and navigate to the cloud folder
+mkdir -p ../cloud
+cd ../cloud
+
+# Cloud Tools
+git clone https://github.com/nccgroup/ScoutSuite.git
+git clone https://github.com/prowler-cloud/prowler.git
+git clone https://github.com/aquasecurity/cloudsploit.git
+git clone https://github.com/duo-labs/cloudmapper.git
+git clone https://github.com/RhinoSecurityLabs/pacu.git
+git clone https://github.com/BishopFox/cloudfox.git
+git clone https://github.com/turbot/steampipe.git
+git clone https://github.com/NotSoSecure/cloud-service-enum.git
+git clone https://github.com/jsa2/EAST.git
+git clone https://github.com/google/gcp_scanner.git
